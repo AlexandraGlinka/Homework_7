@@ -3,6 +3,7 @@ public class Main {
         task1();
         task2();
         task3();
+        task4();
     }
 
     public static void task1 () {
@@ -70,6 +71,38 @@ public class Main {
             population = population + (birth - death) * count;
             System.out.println("Год " + i + ", численность населения составляет " + population);
         }
+    }
+
+    public static void task4() {
+        System.out.println("Задача 4");
+        /*
+        Василий решил положить деньги на накопительный счет,
+        где каждый месяц к сумме его вклада добавляется еще 7%.
+        Первоначальная сумма вклада — 15 тысяч рублей.
+        Вычислите и выведите в консоль, сколько месяцев Василию нужно будет копить,
+        чтобы собрать сумму в 12 миллионов рублей при условии,
+        что процент банка от накоплений не меняется, а всегда равен 7%.
+        Выведите в консоль результат программы с указанием суммы накоплений по каждому месяцу.
+         */
+
+        double deposit = 15_000;
+        double interest = 7;
+        double interestRate = interest / 100;
+        int month = 1;
+        int totalDeposit;
+        while (deposit < 12_000_000) {
+            deposit = deposit * (1 + interestRate);
+            totalDeposit = (int)(deposit);
+            System.out.println("В " + month + " месяц Василий накопит " + totalDeposit + " руб.");
+            month ++;
+        }
+
+        /*
+        ВОПРОС!!!!!!
+        Задание 4
+        почему с типом данных double большие числа выводит с буквой Е?
+        пришлось привести к int, чтобы избавиться от этого
+         */
     }
 
 }
