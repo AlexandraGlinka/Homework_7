@@ -7,6 +7,7 @@ public class Main {
         task5();
         task6();
         task7();
+        task8();
     }
 
     public static void task1 () {
@@ -170,6 +171,33 @@ public class Main {
         int friday = 3;
         for (; friday <= 31; friday += 7) {
             System.out.println("Сегодня пятница, " + friday + " число месяца. Необходимо подготовить отчет");
+        }
+    }
+
+    public static void task8() {
+        System.out.println("Задача 8");
+        /*
+        Нам нужно написать астрономическое приложение, которое считает, когда над Землей пролетает комета.
+        Известно, что комета пролетает каждый 79-й год, начиная с нулевого.
+        В консоль нужно вывести все годы за последние 200 лет, когда появлялась комета,
+        а также следующий год ее появления (ближайшие 100 лет).
+        Для вычисления периода можно создать две дополнительные переменные,
+        которые содержат год за 200 лет до текущего (из созданной ранее переменной)
+        в качестве старта и 100 лет после в качестве завершения периода расчета.
+        В результате решения задачи в консоли должен получиться следующий результат:
+         */
+
+        int currentYear = 2023;
+        int periodBeforeCur = 200;
+        int periodAfterCur = 100;
+        int startYear = currentYear - periodBeforeCur;
+        int finishYear = currentYear + periodAfterCur;
+        int comet = 79;
+
+        for (int year = startYear; year >= startYear && year <= finishYear; year ++) {
+            if (year % comet == 0) {
+                System.out.println(year);
+            }
         }
     }
 }
