@@ -4,6 +4,7 @@ public class Main {
         task2();
         task3();
         task4();
+        task5();
     }
 
     public static void task1 () {
@@ -103,6 +104,28 @@ public class Main {
         почему с типом данных double большие числа выводит с буквой Е?
         пришлось привести к int, чтобы избавиться от этого
          */
+    }
+
+    public static void task5() {
+        System.out.println("Задача 5");
+        /*
+        Видоизмените программу таким образом, чтобы в консоль выводились не все месяцы подряд,
+        а только каждый шестой. Должны быть видны накопления за 6, 12, 18, 24-й и следующие месяцы.
+         */
+        double deposit = 15_000;
+        double interest = 7;
+        double interestRate = interest / 100;
+        int month = 1;
+        int totalDeposit;
+        while (deposit < 12_000_000) {
+            deposit = deposit * (1 + interestRate);
+            totalDeposit = (int)(deposit);
+            if (month % 6 == 0) {
+                System.out.println("В " + month + " месяц Василий накопит " + totalDeposit + " руб.");
+            }
+            month ++;
+        }
+
     }
 
 }
