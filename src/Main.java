@@ -5,6 +5,7 @@ public class Main {
         task3();
         task4();
         task5();
+        task6();
     }
 
     public static void task1 () {
@@ -125,7 +126,30 @@ public class Main {
             }
             month ++;
         }
-
     }
 
+    public static void task6() {
+        System.out.println("Задача 6");
+        /*
+        Василий решил, что будет копить деньги ближайшие 9 лет.
+        Он хочет знать, какой будет сумма его накоплений каждые полгода на протяжении этих 9 лет.
+        Исходная сумма всё та же — 15 тысяч рублей, проценты банка – 7% ежемесячно.
+        Напишите программу, которая будет выводить сумму накоплений за каждые полгода в течение 9 лет.
+         */
+
+        double deposit = 15_000;
+        double interest = 7;
+        double interestRate = interest / 100;
+        int month = 1;
+        int totalDeposit;
+        //int depositTerm = 9 * 12;
+        while (month < 9 * 12) {
+            deposit = deposit * (1 + interestRate);
+            totalDeposit = (int)(deposit);
+            if (month % 6 == 0) {
+                System.out.println("За " + (month / 12f) + " г. Василий накопит " + totalDeposit + " руб.");
+            }
+            month ++;
+        }
+    }
 }
